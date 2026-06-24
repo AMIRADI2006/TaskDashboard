@@ -110,7 +110,7 @@ export default function TaskCard({
             </span>
           )}
 
-          {status && (
+          {status && !task.completed && (
             <span
               className={`flex items-center px-3 py-1 rounded-full text-xs whitespace-nowrap ${status.color}`}
             >
