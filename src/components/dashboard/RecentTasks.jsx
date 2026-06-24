@@ -15,7 +15,9 @@ export default function RecentTasks({ tasks }) {
               <div>
                 <h4 className="font-medium dark:text-white">{task.title}</h4>
 
-                <p className="text-sm text-gray-500">{task.category}</p>
+                <p className="text-sm text-gray-500">
+                  {task.category ? task.category : "Other"}
+                </p>
               </div>
 
               <span>{task.completed ? "✅" : "⭕"}</span>

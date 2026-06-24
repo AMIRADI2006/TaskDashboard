@@ -50,8 +50,7 @@ export default function Dashboard() {
           <HighPriorityTasks tasks={highPriorityTasks} />
         </div>
 
-        {/* Sidebar */}
-
+        {/*Right Sidebar */}
         <div className="space-y-6">
           <ProgressCard
             progress={progress}
