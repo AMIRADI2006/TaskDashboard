@@ -86,7 +86,7 @@ export default function Login() {
               className="w-full border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-xl p-3 outline-none"
             />
             {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              <p className="text-red-500 text-sm mt-1 ml-1">{errors.email}</p>
             )}
           </div>
           {/* Password */}
@@ -103,7 +103,9 @@ export default function Login() {
                 className="w-full border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-xl p-3 outline-none"
               />
               {errors.password && (
-                <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+                <p className="text-red-500 text-sm mt-1 ml-1">
+                  {errors.password}
+                </p>
               )}
               {/* btn Password */}
               <button
