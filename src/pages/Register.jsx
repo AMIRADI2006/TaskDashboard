@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+import toast from "react-hot-toast";
+
 import { useTheme } from "../hooks/useTheme";
 
 export default function Register() {
@@ -33,24 +35,28 @@ export default function Register() {
 
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full name is required";
+      toast.error("Full name is required");
     } else if (formData.fullName.length < 3) {
       newErrors.fullName = "Minimum 3 characters";
     }
 
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
+      toast.error("Email is required");
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Invalid email";
     }
 
     if (!formData.password.trim()) {
       newErrors.password = "Password is required";
+      toast.error("Password is required");
     } else if (formData.password.length < 6) {
       newErrors.password = "Password must be at least 6 characters";
     }
 
     if (formData.confirmPassword !== formData.password) {
       newErrors.confirmPassword = "Passwords do not match";
+      toast.error("Passwords do not match");
     }
 
     setErrors(newErrors);
@@ -59,7 +65,7 @@ export default function Register() {
       return;
     }
 
-    console.log(formData);
+    toast.success("Account created successfully 🚀");
 
     setFormData({
       fullName: "",

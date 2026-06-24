@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+import toast from "react-hot-toast";
+
 import { useTheme } from "../hooks/useTheme";
 
 export default function Login() {
@@ -27,12 +29,14 @@ export default function Login() {
 
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
+      toast.error("Email is required");
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Invalid email";
     }
 
     if (!formData.password.trim()) {
       newErrors.password = "Password is required";
+      toast.error("Password is required");
     } else if (formData.password.length < 6) {
       newErrors.password = "Password must be at least 6 characters";
     }
@@ -43,7 +47,7 @@ export default function Login() {
       return;
     }
 
-    console.log(formData);
+    toast.success("Login successful 🎉");
 
     setFormData({
       email: "",

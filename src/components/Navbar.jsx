@@ -1,9 +1,14 @@
 import MobileMenu from "./MobileMenu";
 import { FaBell } from "react-icons/fa";
 import { useTheme } from "../hooks/useTheme";
+import Avatar from "./Avatar";
 
 export default function Navbar({ setIsOpen }) {
   const { dark, setDark } = useTheme();
+
+  const user = {
+    name: "AmirMohammad",
+  };
   return (
     <header
       className="
@@ -24,7 +29,7 @@ export default function Navbar({ setIsOpen }) {
         </button>
         <FaBell />
 
-        <img src="https://i.pravatar.cc/40" className="rounded-full" />
+        <Avatar name={user.name} size="w-7 h-7" textSize="text-lg" />
       </div>
     </header>
   );
