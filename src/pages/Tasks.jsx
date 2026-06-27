@@ -27,7 +27,7 @@ export default function Tasks() {
   const [priority, setPriority] = useState("");
 
   const filteredTasks = tasks.filter((task) => {
-    const searchMatch = task.title.toLowerCase().includes(search.toLowerCase());
+    const searchMatch = task.title?.toLowerCase().includes(search.toLowerCase());
 
     const filterMatch =
       filter === "all"
