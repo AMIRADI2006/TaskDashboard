@@ -1,4 +1,4 @@
-export default function xTaskSearchFilter({
+export default function TaskSearchFilter({
   search,
   setSearch,
   filter,

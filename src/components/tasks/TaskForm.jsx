@@ -56,6 +56,7 @@ export default function TaskForm({
 
       <div className="relative">
         <input
+          // type="datetime-local
           type="date"
           value={dueDate}
           onChange={(e) => setDueDate(e.target.value)}
